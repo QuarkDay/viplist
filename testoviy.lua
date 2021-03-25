@@ -1,6 +1,6 @@
 script_name("VIP List")
 script_authors("KOFFEMOLKA")
-script_description("Список VIP игроков")
+script_description("РЎРїРёСЃРѕРє VIP РёРіСЂРѕРєРѕРІ")
 script_version("1.0")
 script_dependencies("CLEO")
 
@@ -66,7 +66,7 @@ function main()
 		if status == dlstatus.STATUS_ENDDOWNLOADDATA then 
 			updateIni = inicfg.load(nil, update_path)
 			if tonumber(updateIni.info.vers) > script_vers then
-				sampAddChatMessage("Есть обнова", -1)
+				sampAddChatMessage("Р•СЃС‚СЊ РѕР±РЅРѕРІР°", -1)
 			end
 		end
 	end)
@@ -98,7 +98,7 @@ function main()
 		if update_state then
 			downloadUrlToFile(update_url, script_path, function (id, status)
 				if status == dlstatus.STATUS_ENDDOWNLOADDATA then 
-					sampAddChatMessage("Скрипт обновлён, додек", -1)
+					sampAddChatMessage("РЎРєСЂРёРїС‚ РѕР±РЅРѕРІР»С‘РЅ, РґРѕРґРµРє", -1)
 				 	thisScript():reload()
 				end
 			end)
@@ -111,34 +111,34 @@ function main()
 end
 
 function vlinfo()
-	sampShowDialog(1, "{00ffff}Описание скрипта", "{FFFFFF}VipList - это скрипт для репортёров, позволяющий посмотреть текущие {DC143C}VIP Фракции и Игроков {FFFFFF}, не выходя из игры и\nне заглядывая на форум.\n\n{00FFFF}Команды:\n{00FF00}/addvips {FFFFFF}- открывает окно, в котором можно вписать текущих {DC143C}VIP Персон{FFFFFF}.\n{00FF00}/vipl {FFFFFF} - показывает список текущих {DC143C}VIP Персон{FFFFFF}.\n\n{00FFFF}Примечение{FFFFFF}: данный скрипт создан на дичайших \"костылях\", а потому в нём присутствуют следующие неудобства:\n{FFFFFF}Если вы нажмёте на кнопку \"{DC143C}Сохранить{FFFFFF}\", но ничего не впишете в поля\nдля ввода и {DC143C}перезапустите скрипт{FFFFFF}, то список {DC143C}слетит{FFFFFF} и придётся составлять его {DC143C}заново{FFFFFF}.\nТакже, каждый раз, как вам придётся обновить список, его придётся составлять {DC143C}с нуля{FFFFFF}, т.к. информация в полях\nдля ввода не остаётся там навечно.\n\n{00FFFF}Для всех любителей писать скрипты{FFFFFF}:\nЕсли вы вдруг захотите как-либо улучшить/изменить скрипт и/или исправить его недостатки, то\nвы сможете спокойно это сделать, т.к. исходный код скрипта я оставляю открытым.", "Закрыть", "", 0)
+	sampShowDialog(1, "{00ffff}РћРїРёСЃР°РЅРёРµ СЃРєСЂРёРїС‚Р°", "{FFFFFF}VipList - СЌС‚Рѕ СЃРєСЂРёРїС‚ РґР»СЏ СЂРµРїРѕСЂС‚С‘СЂРѕРІ, РїРѕР·РІРѕР»СЏСЋС‰РёР№ РїРѕСЃРјРѕС‚СЂРµС‚СЊ С‚РµРєСѓС‰РёРµ {DC143C}VIP Р¤СЂР°РєС†РёРё Рё РРіСЂРѕРєРѕРІ {FFFFFF}, РЅРµ РІС‹С…РѕРґСЏ РёР· РёРіСЂС‹ Рё\nРЅРµ Р·Р°РіР»СЏРґС‹РІР°СЏ РЅР° С„РѕСЂСѓРј.\n\n{00FFFF}РљРѕРјР°РЅРґС‹:\n{00FF00}/addvips {FFFFFF}- РѕС‚РєСЂС‹РІР°РµС‚ РѕРєРЅРѕ, РІ РєРѕС‚РѕСЂРѕРј РјРѕР¶РЅРѕ РІРїРёСЃР°С‚СЊ С‚РµРєСѓС‰РёС… {DC143C}VIP РџРµСЂСЃРѕРЅ{FFFFFF}.\n{00FF00}/vipl {FFFFFF} - РїРѕРєР°Р·С‹РІР°РµС‚ СЃРїРёСЃРѕРє С‚РµРєСѓС‰РёС… {DC143C}VIP РџРµСЂСЃРѕРЅ{FFFFFF}.\n\n{00FFFF}РџСЂРёРјРµС‡РµРЅРёРµ{FFFFFF}: РґР°РЅРЅС‹Р№ СЃРєСЂРёРїС‚ СЃРѕР·РґР°РЅ РЅР° РґРёС‡Р°Р№С€РёС… \"РєРѕСЃС‚С‹Р»СЏС…\", Р° РїРѕС‚РѕРјСѓ РІ РЅС‘Рј РїСЂРёСЃСѓС‚СЃС‚РІСѓСЋС‚ СЃР»РµРґСѓСЋС‰РёРµ РЅРµСѓРґРѕР±СЃС‚РІР°:\n{FFFFFF}Р•СЃР»Рё РІС‹ РЅР°Р¶РјС‘С‚Рµ РЅР° РєРЅРѕРїРєСѓ \"{DC143C}РЎРѕС…СЂР°РЅРёС‚СЊ{FFFFFF}\", РЅРѕ РЅРёС‡РµРіРѕ РЅРµ РІРїРёС€РµС‚Рµ РІ РїРѕР»СЏ\nРґР»СЏ РІРІРѕРґР° Рё {DC143C}РїРµСЂРµР·Р°РїСѓСЃС‚РёС‚Рµ СЃРєСЂРёРїС‚{FFFFFF}, С‚Рѕ СЃРїРёСЃРѕРє {DC143C}СЃР»РµС‚РёС‚{FFFFFF} Рё РїСЂРёРґС‘С‚СЃСЏ СЃРѕСЃС‚Р°РІР»СЏС‚СЊ РµРіРѕ {DC143C}Р·Р°РЅРѕРІРѕ{FFFFFF}.\nРўР°РєР¶Рµ, РєР°Р¶РґС‹Р№ СЂР°Р·, РєР°Рє РІР°Рј РїСЂРёРґС‘С‚СЃСЏ РѕР±РЅРѕРІРёС‚СЊ СЃРїРёСЃРѕРє, РµРіРѕ РїСЂРёРґС‘С‚СЃСЏ СЃРѕСЃС‚Р°РІР»СЏС‚СЊ {DC143C}СЃ РЅСѓР»СЏ{FFFFFF}, С‚.Рє. РёРЅС„РѕСЂРјР°С†РёСЏ РІ РїРѕР»СЏС…\nРґР»СЏ РІРІРѕРґР° РЅРµ РѕСЃС‚Р°С‘С‚СЃСЏ С‚Р°Рј РЅР°РІРµС‡РЅРѕ.\n\n{00FFFF}Р”Р»СЏ РІСЃРµС… Р»СЋР±РёС‚РµР»РµР№ РїРёСЃР°С‚СЊ СЃРєСЂРёРїС‚С‹{FFFFFF}:\nР•СЃР»Рё РІС‹ РІРґСЂСѓРі Р·Р°С…РѕС‚РёС‚Рµ РєР°Рє-Р»РёР±Рѕ СѓР»СѓС‡С€РёС‚СЊ/РёР·РјРµРЅРёС‚СЊ СЃРєСЂРёРїС‚ Рё/РёР»Рё РёСЃРїСЂР°РІРёС‚СЊ РµРіРѕ РЅРµРґРѕСЃС‚Р°С‚РєРё, С‚Рѕ\nРІС‹ СЃРјРѕР¶РµС‚Рµ СЃРїРѕРєРѕР№РЅРѕ СЌС‚Рѕ СЃРґРµР»Р°С‚СЊ, С‚.Рє. РёСЃС…РѕРґРЅС‹Р№ РєРѕРґ СЃРєСЂРёРїС‚Р° СЏ РѕСЃС‚Р°РІР»СЏСЋ РѕС‚РєСЂС‹С‚С‹Рј.", "Р—Р°РєСЂС‹С‚СЊ", "", 0)
 end
 
 function imgui.OnDrawFrame()
 	local sw, sh = getScreenResolution()
 	imgui.SetNextWindowPos(imgui.ImVec2(sw / 2, sh / 2), imgui.Cond.FirstUseEver, imgui.ImVec2(0.5, 0.5))
 	imgui.SetNextWindowSize(imgui.ImVec2(900, 600), imgui.Cond.FirstUseEver)
-  imgui.Begin(u8'Составление VIP списка', main_window_state) 
+  imgui.Begin(u8'РЎРѕСЃС‚Р°РІР»РµРЅРёРµ VIP СЃРїРёСЃРєР°', main_window_state) 
   
-        imgui.Text(u8'Введите VIP Фракции')
+        imgui.Text(u8'Р’РІРµРґРёС‚Рµ VIP Р¤СЂР°РєС†РёРё')
         imgui.SameLine()
         imgui.InputText('', text_buffer)
 
-        imgui.Text(u8'Введите VIP Игроков')
+        imgui.Text(u8'Р’РІРµРґРёС‚Рµ VIP РРіСЂРѕРєРѕРІ')
         imgui.SameLine()
         imgui.InputText(' ', text_duffer)
 
-        imgui.Text(u8'Введите дату списка')
+        imgui.Text(u8'Р’РІРµРґРёС‚Рµ РґР°С‚Сѓ СЃРїРёСЃРєР°')
         imgui.SameLine()
         imgui.InputText('  ', text_suffer)
 		
 
-	if imgui.Button(u8"Сохранить") then
+	if imgui.Button(u8"РЎРѕС…СЂР°РЅРёС‚СЊ") then
     mainIni.config.name = u8:decode(text_buffer.v)
 	mainIni.config.players = u8:decode(text_duffer.v)
 	mainIni.config.date = u8:decode(text_suffer.v)
     inicfg.save(mainIni, directIni)
-	sampAddChatMessage("{FFFFFF}Успешно сохранено!", -1)
+	sampAddChatMessage("{FFFFFF}РЈСЃРїРµС€РЅРѕ СЃРѕС…СЂР°РЅРµРЅРѕ!", -1)
 end
 
   
@@ -153,16 +153,16 @@ function cmd_imgui(arg)
 end
 
 function listoc(arg)
-	sampAddChatMessage("{12FFE7}Список VIP фракций:", -1)
+	sampAddChatMessage("{12FFE7}РЎРїРёСЃРѕРє VIP С„СЂР°РєС†РёР№:", -1)
 	lua_thread.create(function()
 	wait(0)
 	sampAddChatMessage(mainIni.config.name, -1)
 	wait(0)
-	sampAddChatMessage("{12FFE7}Список VIP игроков:", -1)
+	sampAddChatMessage("{12FFE7}РЎРїРёСЃРѕРє VIP РёРіСЂРѕРєРѕРІ:", -1)
 	wait(0)
 	sampAddChatMessage(mainIni.config.players, -1)
 	wait(0)
-	sampAddChatMessage("{12FFE7}Список был составлен:", -1)
+	sampAddChatMessage("{12FFE7}РЎРїРёСЃРѕРє Р±С‹Р» СЃРѕСЃС‚Р°РІР»РµРЅ:", -1)
 	wait(0)
 	sampAddChatMessage(mainIni.config.date, -1)
 	end)
